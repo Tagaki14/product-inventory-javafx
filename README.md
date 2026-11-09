@@ -1,55 +1,23 @@
-# Product Inventory Management
+# Aplikasi Manajemen Inventaris Produk
 
-A desktop application for managing product inventory, built with **JavaFX** and **Java**. This application allows users to register products, organize them by category, search for products, and view detailed product information through a simple and intuitive interface.
+Aplikasi desktop berbasis JavaFX yang dikembangkan untuk melakukan pencatatan dan pengelolaan data inventaris produk. Aplikasi ini menyediakan fitur penambahan produk, pengelompokan kategori, pencarian produk, serta penampilan detail informasi produk.
 
-## Features
+## Tampilan Aplikasi
 
-- **Add Products** — Register new products with their name, category, and price.
-- **Automatic Product Code** — Generate unique product codes automatically.
-- **Product Categories** — Organize products into Food and Beverage categories.
-- **Product List** — Display registered products in a structured table.
-- **Search Products** — Find products by name.
-- **Product Details** — View detailed information about a selected product.
-- **Input Validation** — Prevent empty product names and invalid prices.
+![Uploading gambar.png…]()
 
-## Technologies Used
 
-- Java 17+
-- JavaFX 21
-- Maven
-- FXML
-- CSS
+## Fitur Aplikasi
 
-## Getting Started
+- **Tambah Produk:** Memasukkan nama, kategori, dan harga produk.
+- **Kode Produk Otomatis:** Menghasilkan kode unik secara berurutan, seperti PR001, PR002, dan seterusnya.
+- **Kategori Produk:** Mengelompokkan produk ke dalam kategori Makanan dan Minuman.
+- **Daftar Produk:** Menampilkan data produk dalam tabel.
+- **Pencarian Produk:** Mencari produk berdasarkan nama.
+- **Detail Produk:** Menampilkan informasi produk yang dipilih.
+- **Validasi Data:** Memastikan nama produk tidak kosong dan harga lebih dari nol.
 
-### Prerequisites
-
-Make sure you have installed:
-
-- Java Development Kit (JDK) 17 or later
-- Apache Maven
-
-### Installation
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/Tagaki14/product-inventory-javafx.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd product-inventory-javafx
-   ```
-
-3. Run the application:
-
-   ```bash
-   mvn clean javafx:run
-   ```
-
-## Project Structure
+## Struktur Program
 
 ```text
 src/
@@ -76,14 +44,45 @@ src/
 └── pom.xml
 ```
 
-## Data Storage
+## Teknologi yang Digunakan
 
-This application currently uses in-memory storage. Product records are maintained while the application is running and are not permanently saved to a database.
+- Java
+- JavaFX
+- FXML
+- CSS
+- Maven
 
-## Application Scope
+## Cara Menjalankan Aplikasi
 
-This project focuses on basic product inventory recording, including product registration, categorization, searching, and viewing product details.
+### Persyaratan
 
----
+- JDK 17 atau versi lebih baru.
+- Apache Maven.
 
-**Developed as a JavaFX practical project.**
+### Langkah Menjalankan
+
+1. Clone repository:
+
+   ```bash
+   git clone https://github.com/Tagaki14/product-inventory-javafx.git
+   ```
+
+2. Masuk ke direktori proyek:
+
+   ```bash
+   cd product-inventory-javafx
+   ```
+
+3. Jalankan aplikasi:
+
+   ```bash
+   mvn clean javafx:run
+   ```
+
+## Pengelolaan Data
+
+Aplikasi menggunakan penyimpanan sementara di dalam memori (*in-memory storage*) melalui `ObservableList`. Data produk hanya tersedia selama aplikasi berjalan dan tidak disimpan secara permanen ke database.
+
+## Catatan
+
+Proyek ini dikembangkan sebagai tugas praktikum pemrograman GUI menggunakan JavaFX.
