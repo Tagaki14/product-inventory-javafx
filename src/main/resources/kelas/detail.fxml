@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.DetailController"
+            prefWidth="1100" prefHeight="720">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="230" minWidth="230" spacing="12">
+            <padding>
+                <Insets top="30" right="20" bottom="24" left="20"/>
+            </padding>
+
+            <Label text="STOCKROOM" styleClass="brand"/>
+            <Label text="PRODUCT MANAGEMENT" styleClass="brand-caption"/>
+
+            <Region prefHeight="24"/>
+
+            <Label text="MENU UTAMA" styleClass="sidebar-section"/>
+
+            <Button text="Tambah Produk"
+                    styleClass="nav-button"
+                    onAction="#tambahLagi"
+                    maxWidth="Infinity"/>
+
+            <Button text="Daftar Produk"
+                    styleClass="nav-button, nav-button-active"
+                    onAction="#bukaDaftar"
+                    maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Label text="PRODUCT INVENTORY"
+                   styleClass="sidebar-footer"/>
+            <Label text="Manajemen Data Produk"
+                   styleClass="sidebar-footer-muted"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="content-area" spacing="26">
+            <padding>
+                <Insets top="42" right="48" bottom="42" left="48"/>
+            </padding>
+
+            <VBox spacing="8">
+                <Label text="INVENTORY / DETAIL PRODUK" styleClass="eyebrow"/>
+                <Label text="Detail Produk" styleClass="page-title"/>
+                <Label text="Informasi lengkap mengenai produk yang dipilih."
+                       styleClass="page-description"/>
+            </VBox>
+
+            <VBox styleClass="card" spacing="24" maxWidth="720">
+                <VBox spacing="5">
+                    <Label text="Informasi Produk" styleClass="section-title"/>
+                    <Label text="Rincian data produk dalam inventaris."
+                           styleClass="muted"/>
+                </VBox>
+
+                <VBox spacing="18">
+                    <VBox spacing="5">
+                        <Label text="KODE PRODUK" styleClass="detail-caption"/>
+                        <Label fx:id="kodeLabel"
+                               text="-"
+                               styleClass="detail-value"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <VBox spacing="5">
+                        <Label text="NAMA PRODUK" styleClass="detail-caption"/>
+                        <Label fx:id="namaLabel"
+                               text="-"
+                               styleClass="detail-value"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <VBox spacing="5">
+                        <Label text="KATEGORI" styleClass="detail-caption"/>
+                        <Label fx:id="kategoriLabel"
+                               text="-"
+                               styleClass="detail-value"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <VBox spacing="5">
+                        <Label text="HARGA PRODUK" styleClass="detail-caption"/>
+                        <Label fx:id="hargaLabel"
+                               text="-"
+                               styleClass="detail-price"/>
+                    </VBox>
+                </VBox>
+
+                <Label fx:id="pesanLabel"
+                       styleClass="muted"
+                       wrapText="true"/>
+
+                <HBox spacing="12">
+                    <Button text="Kembali ke Daftar"
+                            onAction="#bukaDaftar"
+                            styleClass="button-primary"/>
+                    <Button text="Tambah Produk"
+                            onAction="#tambahLagi"
+                            styleClass="button-secondary"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

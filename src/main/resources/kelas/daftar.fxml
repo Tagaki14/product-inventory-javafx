@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.DaftarController"
+            prefWidth="1100" prefHeight="720">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="230" minWidth="230" spacing="12">
+            <padding>
+                <Insets top="30" right="20" bottom="24" left="20"/>
+            </padding>
+
+            <Label text="STOCKROOM" styleClass="brand"/>
+            <Label text="PRODUCT MANAGEMENT" styleClass="brand-caption"/>
+
+            <Region prefHeight="24"/>
+
+            <Label text="MENU UTAMA" styleClass="sidebar-section"/>
+
+            <Button text="Tambah Produk"
+                    styleClass="nav-button"
+                    onAction="#tambah"
+                    maxWidth="Infinity"/>
+
+            <Button text="Daftar Produk"
+                    styleClass="nav-button, nav-button-active"
+                    maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Label text="PRODUCT INVENTORY"
+                   styleClass="sidebar-footer"/>
+            <Label text="Manajemen Data Produk"
+                   styleClass="sidebar-footer-muted"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="content-area" spacing="26">
+            <padding>
+                <Insets top="42" right="40" bottom="32" left="40"/>
+            </padding>
+
+            <VBox spacing="8">
+                <Label text="INVENTORY / DATA PRODUK" styleClass="eyebrow"/>
+                <Label text="Daftar Produk" styleClass="page-title"/>
+                <Label text="Kelola dan temukan produk yang tersimpan dalam inventaris toko."
+                       styleClass="page-description"
+                       wrapText="true"/>
+            </VBox>
+
+            <VBox styleClass="card" spacing="18">
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <TextField fx:id="cariField"
+                               promptText="Cari berdasarkan nama produk..."
+                               styleClass="form-input"
+                               HBox.hgrow="ALWAYS"
+                               onAction="#cari"/>
+
+                    <Button text="Cari"
+                            onAction="#cari"
+                            styleClass="button-primary"/>
+
+                    <Button text="Tambah Produk"
+                            onAction="#tambah"
+                            styleClass="button-secondary"/>
+                </HBox>
+
+                <TableView fx:id="tabel" VBox.vgrow="ALWAYS"
+                           prefHeight="430"
+                           styleClass="product-table">
+                    <columns>
+                        <TableColumn fx:id="kodeCol"
+                                     text="Kode Produk"
+                                     prefWidth="130"/>
+                        <TableColumn fx:id="namaCol"
+                                     text="Nama Produk"
+                                     prefWidth="250"/>
+                        <TableColumn fx:id="kategoriCol"
+                                     text="Kategori"
+                                     prefWidth="150"/>
+                        <TableColumn fx:id="hargaCol"
+                                     text="Harga"
+                                     prefWidth="180"/>
+                    </columns>
+                </TableView>
+
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label fx:id="pesanLabel"
+                           text="Belum ada data."
+                           styleClass="muted"
+                           HBox.hgrow="ALWAYS"/>
+
+                    <Button text="Lihat Detail"
+                            onAction="#detail"
+                            styleClass="button-primary"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

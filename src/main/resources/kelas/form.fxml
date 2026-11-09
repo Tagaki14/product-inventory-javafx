@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.FormController"
+            prefWidth="1100" prefHeight="720">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="230" minWidth="230" spacing="12">
+            <padding>
+                <Insets top="30" right="20" bottom="24" left="20"/>
+            </padding>
+
+            <Label text="STOCKROOM" styleClass="brand"/>
+            <Label text="PRODUCT MANAGEMENT" styleClass="brand-caption"/>
+
+            <Region prefHeight="24"/>
+
+            <Label text="MENU UTAMA" styleClass="sidebar-section"/>
+
+            <Button text="Tambah Produk"
+                    styleClass="nav-button, nav-button-active"
+                    maxWidth="Infinity"/>
+
+            <Button text="Daftar Produk"
+                    styleClass="nav-button"
+                    onAction="#bukaDaftar"
+                    maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Label text="PRODUCT INVENTORY"
+                   styleClass="sidebar-footer"/>
+            <Label text="Manajemen Data Produk"
+                   styleClass="sidebar-footer-muted"/>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <content>
+                <VBox styleClass="content-area" spacing="26">
+                    <padding>
+                        <Insets top="42" right="48" bottom="42" left="48"/>
+                    </padding>
+
+                    <VBox spacing="8" styleClass="page-header">
+                        <Label text="INVENTORY / PRODUK" styleClass="eyebrow"/>
+                        <Label text="Tambah Produk" styleClass="page-title"/>
+                        <Label text="Masukkan informasi produk untuk menambah data inventaris toko."
+                               styleClass="page-description"
+                               wrapText="true"/>
+                    </VBox>
+
+                    <VBox styleClass="card" spacing="22" maxWidth="720">
+                        <VBox spacing="5">
+                            <Label text="Informasi Produk" styleClass="section-title"/>
+                            <Label text="Lengkapi seluruh informasi produk di bawah ini."
+                                   styleClass="muted"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Nama Produk" styleClass="field-label"/>
+                            <TextField fx:id="namaField"
+                                       promptText="Contoh: Roti Cokelat"
+                                       styleClass="form-input"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Kategori Produk" styleClass="field-label"/>
+                            <ComboBox fx:id="kategoriBox"
+                                      promptText="Pilih kategori"
+                                      maxWidth="Infinity"
+                                      styleClass="form-input"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Harga Produk (Rp)" styleClass="field-label"/>
+                            <TextField fx:id="hargaField"
+                                       promptText="Contoh: 8000"
+                                       styleClass="form-input"/>
+                            <Label text="Masukkan harga dalam angka tanpa simbol mata uang."
+                                   styleClass="helper-text"/>
+                        </VBox>
+
+                        <Label fx:id="pesanLabel"
+                               styleClass="status-text"
+                               wrapText="true"/>
+
+                        <HBox spacing="12">
+                            <Button text="Simpan Produk"
+                                    onAction="#simpan"
+                                    styleClass="button-primary"/>
+                            <Button text="Lihat Daftar"
+                                    onAction="#bukaDaftar"
+                                    styleClass="button-secondary"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
